@@ -1,0 +1,1 @@
+print("Welcome to Lab2 of DevOps for AIoT")
