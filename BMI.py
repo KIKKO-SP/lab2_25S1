@@ -1,21 +1,27 @@
-def calculate_bmi(name, height, weight):
-    bmi = weight / (height ** 2)
-    rounded_bmi = round(bmi, 2)
-    print(f"{name}, your BMI is: {rounded_bmi}")
+def calculate_bmi(height, weight):
+    print("Height = " + str(height))
+    print("Weight = " + str(weight))
+
+    bmi = weight / (height*height)
+    print("BMI = ", round(bmi,2))  # Round the BMI to 2 decimal points
 
     if bmi < 18.5:
-        print(f"{name}, you are underweight.")
+        print("Under weight")
         return -1
-    elif bmi < 25:
-        print(f"{name}, you have a normal weight.")
-        return 0
-    else:
-        print(f"{name}, you are overweight.")
+    elif bmi > 25.0:
+        print("Over weight")
         return 1
+    else:
+        print("Normal weight")
+        return 0
 
-# --- Main Program ---
-name = input("Enter your name: ")
-height = float(input("Enter your height in meters: "))
-weight = float(input("Enter your weight in kilograms: "))
 
-calculate_bmi(name, height, weight)
+
+print("--------------------------------")
+calculate_bmi(1.73, 37)  # Under weight
+print("--------------------------------")
+calculate_bmi(1.73, 57)  # Normal weight
+print("--------------------------------")
+calculate_bmi(1.73, 97)  # Over weight
+print("--------------------------------")
+
